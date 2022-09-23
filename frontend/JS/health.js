@@ -1,10 +1,15 @@
-const news= document.getElementById('news')
+const newsHealth= document.getElementById('healthnews')
 
-let newssection
+let newssection= `<div class="col-lg-4">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  </div>`
 $(document).ready(() => {
     $.ajax({
         type: "GET",
-        url: "http://localhost/news/backend/selectnews.php",
+        url: "http://localhost/news/backend/health.php",
         dataType: "html",
         success: (json) => {
         let data = JSON.parse(json);
@@ -12,11 +17,11 @@ $(document).ready(() => {
             console.log(newsdetails.time)
             newssection= `<div class="col-lg-4 news ">
             <div class="title">${newsdetails.title}</div>
-            <div class="type">${newsdetails.type}</div>
+            <div class="type">Health</div>
             <div class="contents">${newsdetails.contents}</div>
             <div class="date">${newsdetails.time}</div>
             </div>` 
-        news.innerHTML+= newssection}
+        newsHealth.innerHTML+= newssection}
         console.log(data);}
     })
 })
