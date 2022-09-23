@@ -19,7 +19,6 @@ $(document).ready(() => {
             <div class="title">${newsdetails.title}</div>
             <div class="contents">${newsdetails.contents}</div>
             <div class="date">${newsdetails.time}</div>
-            <hr>
             </div>` 
         news.innerHTML+= newssection}
         console.log(data);}
