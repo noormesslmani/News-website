@@ -9,7 +9,7 @@ let newssection= `<div class="col-lg-4">
 $(document).ready(() => {
     $.ajax({
         type: "GET",
-        url: "http://localhost/selectnews.php",
+        url: "http://localhost/news/selectnews.php",
         dataType: "html",
         success: (json) => {
         let data = JSON.parse(json);
